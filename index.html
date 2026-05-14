@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>115國二升國三</title>
+    <title>test001</title>
     
 
   </head>
@@ -108,8 +108,9 @@
     .teams-item.gift-glow .teams-gift-tag { display: inline-block; }
     .checkbox-custom { width: 18px; height: 18px; accent-color: #06b6d4; cursor: pointer; }
 
-    /* 表格樣式 */
-    .timetable { width: 100%; border-collapse: collapse; margin-top: 12px; background: #1e293b; border-radius: 8px; overflow: hidden; }
+    /* 表格樣式 (加入響應式卷軸) */
+    .table-responsive { width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; margin-top: 12px; margin-bottom: 20px;}
+    .timetable { width: 100%; border-collapse: collapse; background: #1e293b; border-radius: 8px; overflow: hidden; min-width: 600px; }
     .timetable th, .timetable td { border: 1px solid #334155; padding: 12px; text-align: center; }
     .timetable th { background: #0f172a; color: #38bdf8; font-weight: 800; }
     .timetable td { color: #cbd5e1; font-size: 0.95rem; }
@@ -129,50 +130,55 @@
     .event-exam { background: #fbbf24; }
     .event-vacation { background: #f472b6; color: white; }
 
+    /* 響應式佈局調整 */
     @media (max-width: 768px) {
+      .tech-card { padding: 16px; }
+      .subject-card > div { flex-direction: column; align-items: stretch; gap: 16px; }
       .subject-buttons { flex-direction: column; width: 100%; align-items: stretch !important; }
-      .btn-stage, .btn-early { width: 100%; margin-bottom: 6px; text-align: center; }
+      .btn-stage, .btn-early { width: 100%; margin-bottom: 6px; text-align: center; padding: 12px; font-size: 1rem; }
       .calendar-wrapper { grid-template-columns: 1fr; }
-      .teams-grid { grid-template-columns: 1fr 1fr !important; }
-      .timetable { font-size: 0.8rem; }
-      .timetable th, .timetable td { padding: 6px; }
+      .teams-grid { grid-template-columns: 1fr !important; }
+      .desktop-grid { grid-template-columns: 1fr !important; }
+      .payment-methods-grid { grid-template-columns: 1fr !important; }
+      .summary-grid { grid-template-columns: 1fr !important; text-align: left !important; gap: 12px; }
+      #total-price-summary { text-align: left !important; font-size: 2rem !important; }
+      .control-panel { flex-direction: column; align-items: stretch !important; gap: 16px;}
+      .control-panel > div { flex-direction: column; align-items: stretch !important; gap: 12px;}
+      .control-panel input { width: 100% !important; }
       .tech-heading { flex-direction: column; align-items: flex-start !important; }
       .blinking-hint { margin-left: 0; margin-top: 8px; white-space: normal; }
-      .desktop-grid { grid-template-columns: 1fr !important; }
     }
   </style>
  </head>
  <body>
   <div style="max-width: 1200px; margin: 0 auto; padding: 24px; width: 100%;">
    
-   <!-- Header -->
    <div style="background: linear-gradient(135deg, #0369a1 0%, #082f49 100%); border-radius: 16px; padding: 36px; margin-bottom: 24px; border: 1px solid #38bdf8; box-shadow: 0 0 30px rgba(14, 165, 233, 0.4); text-align: center; position: relative; overflow: hidden;">
     <h1 id="main-title" style="font-size: 2.3rem; font-weight: 900; margin: 0 0 12px 0; color: #fff; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">顧群文教 115 國三總複習班 課程規劃</h1>
     <p style="font-size: 1.2rem; margin: 0; color: #bae6fd; font-weight: 600;">全體知識點檢測 ＋ 個人學習分析診斷 ＋ 標靶適性學習輔導</p>
    </div>
    
-   <!-- 課程規劃藍圖 -->
    <div class="tech-card">
     <h2 class="tech-heading">📅 國三總複習 三階段課程藍圖</h2>
     <div style="display: grid; gap: 12px;">
-     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden;">
-      <div style="background: #fbbf24; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem;">A階段</div>
-      <div style="padding: 20px; flex: 1;">
+     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden; flex-wrap: wrap;">
+      <div style="background: #fbbf24; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem; flex-shrink: 0;">A階段</div>
+      <div style="padding: 20px; flex: 1; min-width: 250px;">
        <div style="color: #fcd34d; font-weight: 800; font-size: 1.2rem; margin-bottom: 4px;">黃金暑假日週課程 <span style="font-size: 1rem; color: #cbd5e1; font-weight: 600;">(115/7/4 ~ 115/8/30)</span></div>
        <div style="color: #e2e8f0; line-height: 1.6;">＊數學、生物 B1-B2、暑假額外 7 次課程，讓孩子輕鬆有效掌握複習重點。</div>
       </div>
      </div>
-     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden;">
-      <div style="background: #38bdf8; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem;">B階段</div>
-      <div style="padding: 20px; flex: 1;">
+     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden; flex-wrap: wrap;">
+      <div style="background: #38bdf8; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem; flex-shrink: 0;">B階段</div>
+      <div style="padding: 20px; flex: 1; min-width: 250px;">
        <div style="color: #7dd3fc; font-weight: 800; font-size: 1.2rem; margin-bottom: 4px;">國三(上) 20週菁英培訓 <span style="font-size: 1rem; color: #cbd5e1; font-weight: 600;">(115/8/31 ~ 116/1/20)</span></div>
        <div style="color: #e2e8f0; line-height: 1.6;">＊數學、自然 B5-B6 課程，建立良好基礎及紮實觀念。<br>＊國文、英文、社會採<span style="color: #fca5a5; font-weight: bold;">主題式</span>授課，建立孩子<span style="color: #fca5a5; font-weight: bold;">統整能力</span>，輕鬆面對會考。</div>
        <div style="margin-top: 8px; color: #fbbf24; font-weight: bold;">☀️ 7/2(四) 18:00-19:30 開課說明會</div>
       </div>
      </div>
-     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden;">
-      <div style="background: #34d399; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem;">C階段</div>
-      <div style="padding: 20px; flex: 1;">
+     <div style="background: rgba(30, 41, 59, 0.6); border: 1px solid #475569; border-radius: 8px; display: flex; overflow: hidden; flex-wrap: wrap;">
+      <div style="background: #34d399; color: #0f172a; font-weight: 900; padding: 20px; display: flex; align-items: center; justify-content: center; width: 100px; font-size: 1.2rem; flex-shrink: 0;">C階段</div>
+      <div style="padding: 20px; flex: 1; min-width: 250px;">
        <div style="color: #6ee7b7; font-weight: 800; font-size: 1.2rem; margin-bottom: 4px;">國三 5A 衝刺班 16週 <span style="font-size: 1rem; color: #cbd5e1; font-weight: 600;">(116/1/21 ~ 116/5/9)</span></div>
        <div style="color: #e2e8f0; line-height: 1.6;">【會考前一週】精準打擊，全面衝刺。</div>
       </div>
@@ -180,7 +186,6 @@
     </div>
    </div>
 
-   <!-- 互動月曆 -->
    <div class="tech-card">
     <h2 class="tech-heading">🗓️ 115 國三【暑假】重點行程月曆</h2>
     <div style="margin-bottom: 12px; display: flex; gap: 16px; flex-wrap: wrap; font-size: 0.9rem;">
@@ -191,7 +196,6 @@
     </div>
     
     <div class="calendar-wrapper">
-     <!-- 7月 -->
      <div class="cal-month">
       <div class="cal-header">2026年 7月</div>
       <div class="cal-grid">
@@ -232,7 +236,6 @@
       </div>
      </div>
 
-     <!-- 8月 -->
      <div class="cal-month">
       <div class="cal-header">2026年 8月</div>
       <div class="cal-grid">
@@ -275,49 +278,44 @@
     </div>
    </div>
    
-   <!-- 全新優惠定價方案表 -->
    <div class="tech-card">
     <h2 class="tech-heading">🎁 國三 A+B階段 學費定價與優惠方案</h2>
     
-    <!-- 學費定價表 -->
-    <div style="overflow-x: auto; margin-bottom: 20px;">
-     <table style="width: 100%; border-collapse: collapse; text-align: center; color: #e2e8f0; background: rgba(15, 23, 42, 0.4); border-radius: 8px; overflow: hidden; white-space: nowrap;">
+    <div class="table-responsive">
+     <table class="timetable">
          <thead>
-             <tr style="background: rgba(15,23,42,0.8); border-bottom: 2px solid #38bdf8;">
-                 <th style="padding: 16px; border: 1px solid #334155;">總複習班</th>
-                 <th style="padding: 16px; border: 1px solid #334155;">A 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/7/4~115/8/30)</span></th>
-                 <th style="padding: 16px; border: 1px solid #334155;">B 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/8/31~116/1/20)</span></th>
-                 <th style="padding: 16px; border: 1px solid #334155;">A+B 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/7/4~116/1/20)</span></th>
+             <tr>
+                 <th>總複習班</th>
+                 <th>A 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/7/4~115/8/30)</span></th>
+                 <th>B 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/8/31~116/1/20)</span></th>
+                 <th>A+B 階<br><span style="font-size: 0.85rem; color: #94a3b8; font-weight: normal;">(115/7/4~116/1/20)</span></th>
              </tr>
          </thead>
          <tbody>
              <tr>
-                 <td style="padding: 16px; border: 1px solid #334155; font-weight: 800; color: #fbcfe8;">國文科<br>英文科<br>社會科</td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.1rem;">6,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 500元/科</span><br><span style="font-size: 0.85rem; color: #94a3b8;">(送暑假下午模考特訓班)</span></td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.1rem;">13,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 1,500元/科</span></td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.2rem; font-weight: 800; color: #38bdf8;">19,000元/科<br><span style="font-size: 0.95rem; color: #fca5a5; font-weight: normal;">教材費 2,000元/科</span></td>
+                 <td style="font-weight: 800; color: #fbcfe8;">國文科<br>英文科<br>社會科</td>
+                 <td style="font-size: 1.1rem;">6,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 500元/科</span><br><span style="font-size: 0.85rem; color: #94a3b8;">(送暑假下午模考課程)</span></td>
+                 <td style="font-size: 1.1rem;">13,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 1,500元/科</span></td>
+                 <td style="font-size: 1.2rem; font-weight: 800; color: #38bdf8;">19,000元/科<br><span style="font-size: 0.95rem; color: #fca5a5; font-weight: normal;">教材費 2,000元/科</span></td>
              </tr>
              <tr>
-                 <td style="padding: 16px; border: 1px solid #334155; font-weight: 800; color: #bae6fd;">數學科<br>自然科</td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.1rem;">7,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 600元/科</span><br><span style="font-size: 0.85rem; color: #94a3b8;">(含暑假下午B1~B2數學、生物複習課程)</span></td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.1rem;">13,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 1,500元/科</span></td>
-                 <td style="padding: 16px; border: 1px solid #334155; font-size: 1.2rem; font-weight: 800; color: #38bdf8;">20,000元/科<br><span style="font-size: 0.95rem; color: #fca5a5; font-weight: normal;">教材費 2,100元/科</span></td>
+                 <td style="font-weight: 800; color: #bae6fd;">數學科<br>自然科</td>
+                 <td style="font-size: 1.1rem;">7,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 600元/科</span><br><span style="font-size: 0.85rem; color: #94a3b8;">(包含暑假下午複習課程)</span></td>
+                 <td style="font-size: 1.1rem;">13,000元/科<br><span style="font-size: 0.9rem; color: #fca5a5;">教材費 1,500元/科</span></td>
+                 <td style="font-size: 1.2rem; font-weight: 800; color: #38bdf8;">20,000元/科<br><span style="font-size: 0.95rem; color: #fca5a5; font-weight: normal;">教材費 2,100元/科</span></td>
              </tr>
          </tbody>
      </table>
     </div>
 
-    <!-- 橫幅優惠 -->
     <div style="background: rgba(251,191,36,0.15); border: 1px solid #fbbf24; text-align: center; padding: 14px; border-radius: 8px; font-weight: 900; font-size: 1.3rem; color: #fde047; letter-spacing: 2px; margin-bottom: 24px;">
         A+B階 預報，三科以上(含) 即優 <span style="color: #f87171;">教材費</span>。
     </div>
 
-    <!-- 優惠卡片雙欄 -->
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;" class="desktop-grid">
-       <!-- 左：早鳥 -->
+    <div class="desktop-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 24px;">
        <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 8px; border-top: 4px solid #fbbf24;">
         <h3 style="font-size: 1.15rem; font-weight: 700; color: #fbbf24; margin-top: 0; margin-bottom: 12px;">⏳ 6/15(一)前 A+B階 預報早鳥優惠</h3>
-        <div style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 12px;">凡 <span style="color: #f70707; font-weight: 700;font-size: 1.2rem; ">預繳 1000元/科</span>，除<span style="color:#fbbf24; font-weight:bold;">送該科線上題庫系統</span>外，還享有以下學費折抵：</div>
+        <div style="color: #e2e8f0; font-size: 0.95rem; margin-bottom: 12px;">凡<span style="color: #f70707; font-weight: 700;font-size: 1.2rem; ">預繳 1000元/科</span>，除<span style="color:#fbbf24; font-weight:bold;">送該科線上題庫系統</span>外，還享有以下學費折抵：</div>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
           <div style="background: rgba(251, 191, 36, 0.1); padding: 8px; border-radius: 6px;"><span style="color: #94a3b8;">任一科</span> <span style="color: #fde047; font-weight: 700; float: right;">現折1,000 元</span></div>
           <div style="background: rgba(251, 191, 36, 0.1); padding: 8px; border-radius: 6px;"><span style="color: #94a3b8;">任二科</span> <span style="color: #fde047; font-weight: 700; float: right;">現折 3,000 元</span></div>
@@ -327,81 +325,81 @@
         </div>
        </div>
 
-       <!-- 右：贈品與說明 -->
        <div style="background: rgba(15, 23, 42, 0.6); padding: 20px; border-radius: 8px; border-top: 4px solid #38bdf8;">
         <h3 style="font-size: 1.15rem; font-weight: 700; color: #38bdf8; margin-top: 0; margin-bottom: 12px;">🎁 A+B階 專屬加碼贈送與加購</h3>
         <ul style="list-style-type: none; margin: 0; padding-left: 0; line-height: 1.8; color: #cbd5e1; font-size: 0.95rem;">
-            <li><span style="color: #38bdf8; margin-right: 6px;">✦</span> <span style="font-weight:bold; color:#e2e8f0;">【報名 數學/自然 送特訓】</span>報名 A+B 階數學、自然，<div style="margin-left: 22px;">就送數學 B1-B2複習課程(7堂)、生物 B1-B2複習課程(7堂)。<br><span style="font-size:0.85rem; color:#94a3b8;">(若未報名A+B階段，單獨加購價 4,000元/科)</span></li>
-            <li><span style="color: #38bdf8; margin-right: 6px;">✦</span> <span style="font-weight:bold; color:#e2e8f0;">【線上題庫系統】</span>若未報名A+B階段，單獨加購Teams<div style="margin-left: 22px;">題庫優惠價為 1,000元/科。</li>
+            <li><span style="color: #38bdf8; margin-right: 6px;">✦</span> <span style="font-weight:bold; color:#e2e8f0;">【報名 數學/自然 送特訓】</span>報名 A+B 階數學、自然，<div style="padding-left: 24px;">就送數學 B1-B2複習課程(7堂)、生物 B1-B2複習課程(7堂)。<br><span style="font-size:0.85rem; color:#94a3b8;">(若未報名A+B階段，單獨加購價 4,000元/科)</span></div></li>
+            <li><span style="color: #38bdf8; margin-right: 6px;">✦</span> <span style="font-weight:bold; color:#e2e8f0;">【線上題庫系統】</span>若未報名A+B階段，單獨加購Teams<div style="padding-left: 24px;">題庫優惠價為 1,000元/科。</div></li>
             <li><span style="color: #38bdf8; margin-right: 6px;">✦</span> 凡國三學生皆送多次模考實戰及各科知識點分析。</li>
-            <li><span style="color: #f87171; margin-right: 6px;">✦</span> <span style="color:#fca5a5;">溫馨提醒：</span>開課後若要減科，會影響多科預報優惠。</li></div>
+            <li><span style="color: #f87171; margin-right: 6px;">✦</span> <span style="color:#fca5a5;">溫馨提醒：</span>開課後若要減科，會影響多科預報優惠。</li>
         </ul>
        </div>
     </div>
    </div>
 
-   <!-- 課表區域 (緊貼試算區上方) -->
    <div class="tech-card">
     <h2 class="tech-heading">🏫 國三總複習班 上課時間表</h2>
     
     <h3 style="color: #fbbf24; font-size: 1.2rem; margin-top: 10px;">☀️ 115 國三【暑假】模考特訓班 及 數學、生物 複習課程 (A階段)</h3>
-    <table class="timetable">
-      <thead>
-        <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">14:00<br>|<br>17:00</td>
-          <td id="cell-chinese-A" class="schedule-cell">自習<br>/<br>國文模考</td>
-          <td id="cell-society-A" class="schedule-cell">自習<br>/<br>社會模考</td>
-          <td id="cell-science-A" class="schedule-cell" style="color:#a7f3d0;">高鋒自然<br>生物總複習<br>(7次)</td>
-          <td id="cell-english-A" class="schedule-cell">自習<br>/<br>英文模考</td>
-          <td id="cell-math-A" class="schedule-cell" style="color:#bae6fd;">馮甯數學<br>B1-B2總複習<br>(7次)</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+     <table class="timetable">
+       <thead>
+         <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td style="font-weight:bold; color:#e2e8f0;">14:00<br>|<br>17:00</td>
+           <td id="cell-chinese-A" class="schedule-cell">自習<br>/<br>國文模考</td>
+           <td id="cell-society-A" class="schedule-cell">自習<br>/<br>社會模考</td>
+           <td id="cell-science-A" class="schedule-cell" style="color:#a7f3d0;">高鋒自然<br>生物總複習<br>(7次)</td>
+           <td id="cell-english-A" class="schedule-cell">自習<br>/<br>英文模考</td>
+           <td id="cell-math-A" class="schedule-cell" style="color:#bae6fd;">馮甯數學<br>B1-B2總複習<br>(7次)</td>
+           <td></td>
+           <td></td>
+         </tr>
+       </tbody>
+     </table>
+    </div>
 
     <h3 style="color: #38bdf8; font-size: 1.2rem; margin-top: 24px;">🌙 115 國三課程表 (A+B階段 28週)</h3>
-    <table class="timetable">
-      <thead>
-        <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">17:30<br>|<br>18:00</td>
-          <td class="schedule-cell cell-science-B">解惑</td>
-          <td class="schedule-cell cell-math-public-B">解惑</td>
-          <td class="schedule-cell cell-science-B">解惑</td>
-          <td class="schedule-cell cell-society-B">解惑</td>
-          <td class="schedule-cell cell-chinese-B">解惑</td>
-          <td class="schedule-cell cell-math-private-B">解惑</td>
-          <td rowspan="2" class="schedule-cell cell-english-B" style="color:#ddd6fe;">09:00-12:00<br><br>英文總複習</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">18:00<br>|<br>21:00</td>
-          <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">自然週考<br>(18:00-19:30)</td>
-          <td class="schedule-cell cell-math-public-B" style="color:#bae6fd;">陳十數學<br>總複習<br>(公立)</td>
-          <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">高鋒自然<br>總複習</td>
-          <td class="schedule-cell cell-society-B" style="color:#fcd34d;">陳翊社會<br>總複習</td>
-          <td class="schedule-cell cell-chinese-B" style="color:#fbcfe8;">楊林國文<br>總複習</td>
-          <td class="schedule-cell cell-math-private-B" style="color:#bae6fd;">馮甯私校<br>數學進度</td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+     <table class="timetable">
+       <thead>
+         <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+       </thead>
+       <tbody>
+         <tr>
+           <td style="font-weight:bold; color:#e2e8f0;">17:30<br>|<br>18:00</td>
+           <td class="schedule-cell cell-science-B">解惑</td>
+           <td class="schedule-cell cell-math-public-B">解惑</td>
+           <td class="schedule-cell cell-science-B">解惑</td>
+           <td class="schedule-cell cell-society-B">解惑</td>
+           <td class="schedule-cell cell-chinese-B">解惑</td>
+           <td class="schedule-cell cell-math-private-B">解惑</td>
+           <td rowspan="2" class="schedule-cell cell-english-B" style="color:#ddd6fe;">09:00-12:00<br><br>英文總複習</td>
+         </tr>
+         <tr>
+           <td style="font-weight:bold; color:#e2e8f0;">18:00<br>|<br>21:00</td>
+           <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">自然週考<br>(18:00-19:30)</td>
+           <td class="schedule-cell cell-math-public-B" style="color:#bae6fd;">陳十數學<br>總複習<br>(公立)</td>
+           <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">高鋒自然<br>總複習</td>
+           <td class="schedule-cell cell-society-B" style="color:#fcd34d;">陳翊社會<br>總複習</td>
+           <td class="schedule-cell cell-chinese-B" style="color:#fbcfe8;">楊林國文<br>總複習</td>
+           <td class="schedule-cell cell-math-private-B" style="color:#bae6fd;">馮甯私校<br>數學進度</td>
+         </tr>
+       </tbody>
+     </table>
+    </div>
    </div>
    
-   <!-- 科目選擇器 & 智慧試算 -->
    <div id="subject-selection-section" class="tech-card">
     <h2 class="tech-heading" style="display: flex; align-items: center; flex-wrap: wrap; gap: 8px;">
-        ✅ 啟動 國三總複習班 學費試算
+        ✅ 啟動 國三總複習班 學費智慧試算
         <span class="blinking-hint">💡 選擇科目A、B、A+B階段，國三課程會在上方課程表為您顯示，請截圖或拍照。</span>
     </h2>
 
     <div id="subjects-container" style="display: grid; gap: 16px; margin-bottom: 24px;">
      
-     <!-- 國文 -->
      <div class="subject-card" data-subject="chinese">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
        <div style="font-weight: 800; color: #e2e8f0; font-size: 1.2rem; min-width: 80px;">📖 國文</div>
@@ -414,7 +412,6 @@
       </div>
      </div>
 
-     <!-- 英文 -->
      <div class="subject-card" data-subject="english">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
        <div style="font-weight: 800; color: #e2e8f0; font-size: 1.2rem; min-width: 80px;">🌐 英文</div>
@@ -427,7 +424,6 @@
       </div>
      </div>
      
-     <!-- 社會 -->
      <div class="subject-card" data-subject="society">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
        <div style="font-weight: 800; color: #e2e8f0; font-size: 1.2rem; min-width: 80px;">🏛️ 社會</div>
@@ -440,7 +436,6 @@
       </div>
      </div>
 
-     <!-- 數學 -->
      <div class="subject-card" data-subject="math">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
        <div style="font-weight: 800; color: #e2e8f0; font-size: 1.2rem; min-width: 80px;">📐 數學</div>
@@ -451,11 +446,9 @@
         <button class="btn-early" data-sub="math" style="border-color:#fbbf24; color:#fbbf24;">🔥 6/15(一)預報</button>
        </div>
       </div>
-      <!-- 發光贈送提示 -->
       <div id="glow-math" class="glow-text-math">🎁 A+B階限定：已贈送暑期數學 B1~B2 複習課程 (共7堂)</div>
      </div>
      
-     <!-- 自然 -->
      <div class="subject-card" data-subject="science">
       <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;">
        <div style="font-weight: 800; color: #e2e8f0; font-size: 1.2rem; min-width: 80px;">⚗️ 自然</div>
@@ -466,12 +459,10 @@
         <button class="btn-early" data-sub="science" style="border-color:#fbbf24; color:#fbbf24;">🔥 6/15(一)預報</button>
        </div>
       </div>
-      <!-- 發光贈送提示 -->
       <div id="glow-science" class="glow-text-bio">🎁 A+B階限定：已贈送暑期生物 B1~B2 複習課程 (共7堂)</div>
      </div>
     </div>
     
-    <!-- 暑假 B1-B2 複習課程加購 -->
     <div style="background: rgba(15, 23, 42, 0.6); border-radius: 8px; padding: 20px; border: 1px dashed rgba(56, 189, 248, 0.4); margin-bottom: 16px;">
      <h3 style="font-size: 1.15rem; font-weight: 700; color: #38bdf8; margin-bottom: 16px;">📚 暑假 B1-B2 複習課程加購 (單科加購 $4,000)</h3>
      <div class="teams-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px;">
@@ -480,7 +471,6 @@
      </div>
     </div>
 
-    <!-- Teams Add-on Section -->
     <div style="background: rgba(15, 23, 42, 0.6); border-radius: 8px; padding: 20px; border: 1px dashed rgba(99, 102, 241, 0.3);">
      <h3 style="font-size: 1.15rem; font-weight: 700; color: #818cf8; margin-bottom: 16px;">📱 加購 Teams 線上題庫 (單科加購 $1,000)</h3>
      <div class="teams-grid" style="display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px;">
@@ -493,11 +483,9 @@
     </div>
    </div>
 
-   <!-- 總計區 -->
    <div style="background: rgba(15, 23, 42, 0.8); border: 1px solid #38bdf8; border-radius: 12px; padding: 28px; margin-bottom: 24px;">
     <div class="summary-grid" style="display: grid; grid-template-columns: 1fr auto; gap: 24px; align-items: center;">
      <div style="width: 100%;">
-      <!-- 細項拆解區域 -->
       <div id="summary-breakdown" style="width:100%; margin-bottom: 12px;">
          <div style="color:#e2e8f0; font-weight:bold; font-size: 1.1rem;">已選組合：無系統資料輸入</div>
       </div>
@@ -510,8 +498,7 @@
     </div>
    </div>
     
-   <!-- 控制按鈕區 -->
-   <div style="display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: rgba(30,41,59,0.5); padding: 20px; border-radius: 12px; margin-bottom: 28px;">
+   <div class="control-panel" style="display: flex; gap: 16px; align-items: center; justify-content: space-between; flex-wrap: wrap; background: rgba(30,41,59,0.5); padding: 20px; border-radius: 12px; margin-bottom: 28px;">
     <div style="display: flex; gap: 16px; align-items: center; flex-wrap: wrap;">
      <div style="display: flex; align-items: center; gap: 8px;"><label style="font-weight: 600; color: #cbd5e1;">年級：</label> <input type="text" id="student-grade" value="國三" style="padding: 10px 14px; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 6px; width: 110px; outline: none;"></div>
      <div style="display: flex; align-items: center; gap: 8px;"><label style="font-weight: 600; color: #cbd5e1;">姓名：</label> <input type="text" id="student-name" placeholder="請輸入姓名" style="padding: 10px 14px; background: #0f172a; border: 1px solid #475569; color: white; border-radius: 6px; width: 150px; outline: none;"></div>
@@ -519,7 +506,6 @@
     <button id="confirm-registration-btn" style="background: #0ea5e9; color: white; padding: 16px 40px; border-radius: 8px; font-weight: 800; font-size: 1.2rem; border: none; cursor: pointer; box-shadow: 0 0 15px rgba(14,165,233,0.5); transition: all 0.2s;" onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 0 25px rgba(14,165,233,0.8)'" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(14,165,233,0.5)'">🚀 產生試算單</button>
    </div>
 
-   <!-- Payment Info 報名方式與繳費資訊 -->
    <div class="tech-card">
     <h2 class="tech-heading">💳 報名方式與繳費資訊</h2>
     
@@ -532,7 +518,6 @@
     </div>
 
     <div class="payment-methods-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-     <!-- 方式一：現場繳費 -->
      <div style="background: rgba(251, 191, 36, 0.05); padding: 24px; border-radius: 8px; border: 1px solid rgba(251, 191, 36, 0.3);">
       <div style="font-size: 1.2rem; font-weight: 700; color: #fbbf24; margin-bottom: 18px; border-bottom: 1px solid rgba(251, 191, 36, 0.2); padding-bottom: 10px;">💳 方式一：現場繳費</div>
       <div style="display: grid; gap: 14px;">
@@ -552,7 +537,6 @@
       </div>
      </div>
 
-     <!-- 方式二：轉帳繳費 -->
      <div style="background: rgba(56, 189, 248, 0.05); padding: 24px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
       <div style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; margin-bottom: 18px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px;">🏦 方式二：轉帳繳費</div>
       <div style="display: grid; gap: 14px;">
@@ -576,7 +560,6 @@
     </div>
    </div>
 
-   <!-- 📢 最新活動文宣 (3張圖區塊) -->
    <div style="background: rgba(30, 41, 59, 0.6); border-radius: 16px; padding: 36px; margin-bottom: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(56, 189, 248, 0.2); text-align: center;">
     <h2 style="font-size: 2rem; font-weight: 700; color: #38bdf8; margin-bottom: 24px; border-bottom: 2px solid rgba(56, 189, 248, 0.5); padding-bottom: 14px; text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);">📢 最新活動文宣</h2>
     <div style="display: grid; gap: 24px;">
@@ -586,10 +569,7 @@
     </div>
    </div>
 
-  </div> <!-- main container end -->
-
-  <!-- 公立/私立數學 選擇彈窗 -->
-  <div id="math-type-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center;">
+  </div> <div id="math-type-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); z-index: 1000; align-items: center; justify-content: center;">
    <div style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 12px; padding: 40px; max-width: 420px; text-align: center; box-shadow: 0 0 40px rgba(56,189,248,0.4);">
     <div style="font-size: 3.5rem; margin-bottom: 16px;">📐</div>
     <div style="font-size: 1.4rem; font-weight: 800; color: #38bdf8; margin-bottom: 12px;">請選擇數學版本</div>
@@ -603,7 +583,6 @@
    </div>
   </div>
 
-  <!-- 系統錯誤彈窗 -->
   <div id="warning-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.7); backdrop-filter: blur(5px); z-index: 1000; align-items: center; justify-content: center;">
    <div style="background: #1e293b; border: 1px solid #ef4444; border-radius: 12px; padding: 36px; max-width: 420px; text-align: center; box-shadow: 0 0 30px rgba(239,68,68,0.3);">
     <div style="font-size: 3rem; margin-bottom: 16px;">⚠️</div>
@@ -612,7 +591,6 @@
    </div>
   </div>
 
-  <!-- 下載繳費說明彈窗 -->
   <div id="download-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(5px); z-index: 1000; align-items: center; justify-content: center;">
    <div style="background: #1e293b; border: 1px solid #38bdf8; border-radius: 12px; padding: 36px; max-width: 520px; text-align: center; box-shadow: 0 0 40px rgba(56,189,248,0.4);">
     <div style="font-size: 3.5rem; margin-bottom: 16px;">📱</div>
@@ -647,7 +625,7 @@
       let teamsPrice = 0;
       let b1b2Price = 0;
       let waivedMaterialSum = 0; 
-      let addonSavedSum = 0; // 記錄贈送的模組價值
+      let addonSavedSum = 0; // 記錄贈送的複習或TEAMS價值
       
       let subjectDetailsArray = [];
       let addOnDisplay = [];
@@ -777,15 +755,19 @@
           document.getElementById('glow-math').style.display = 'inline-block';
           if(mathChk) { mathChk.checked = true; mathChk.disabled = true; }
           if(mathWrap) mathWrap.classList.add('gift-glow');
-          addOnDisplay.push(`數學B1-B2(贈送)`);
-          addonSavedSum += 4000;
+          if (!addOnDisplay.includes(`數學B1-B2(贈送)`)) {
+            addOnDisplay.push(`數學B1-B2(贈送)`);
+            addonSavedSum += 4000;
+          }
       } else {
           document.getElementById('glow-math').style.display = 'none';
           if(mathChk) { mathChk.checked = mathB1B2Manual; mathChk.disabled = false; }
           if(mathWrap) mathWrap.classList.remove('gift-glow');
           if (mathB1B2Manual) {
               b1b2Price += 4000;
-              addOnDisplay.push(`數學B1-B2(+$4,000)`);
+              if (!addOnDisplay.includes(`數學B1-B2(+$4,000)`)) {
+                addOnDisplay.push(`數學B1-B2(+$4,000)`);
+              }
           }
       }
 
@@ -799,15 +781,19 @@
           document.getElementById('glow-science').style.display = 'inline-block';
           if(bioChk) { bioChk.checked = true; bioChk.disabled = true; }
           if(bioWrap) bioWrap.classList.add('gift-glow');
-          addOnDisplay.push(`生物B1-B2(贈送)`);
-          addonSavedSum += 4000;
+          if (!addOnDisplay.includes(`生物B1-B2(贈送)`)) {
+            addOnDisplay.push(`生物B1-B2(贈送)`);
+            addonSavedSum += 4000;
+          }
       } else {
           document.getElementById('glow-science').style.display = 'none';
           if(bioChk) { bioChk.checked = bioB1B2Manual; bioChk.disabled = false; }
           if(bioWrap) bioWrap.classList.remove('gift-glow');
           if (bioB1B2Manual) {
               b1b2Price += 4000;
-              addOnDisplay.push(`生物B1-B2(+$4,000)`);
+              if (!addOnDisplay.includes(`生物B1-B2(+$4,000)`)) {
+                addOnDisplay.push(`生物B1-B2(+$4,000)`);
+              }
           }
       }
 
@@ -837,27 +823,39 @@
       let infoHtml = [];
       if (finalTuitionSum > 0) infoHtml.push(`學費小計: $${finalTuitionSum.toLocaleString()}`);
       if (finalMaterialSum > 0 || materialDiscountText) infoHtml.push(`教材費小計: $${finalMaterialSum.toLocaleString()} <span style="color:#34d399;font-size:0.9rem;">${materialDiscountText}</span>`);
-      if (teamsPrice > 0 || b1b2Price > 0) infoHtml.push(`加購Teams或暑假複習課程: $${(teamsPrice + b1b2Price).toLocaleString()}`);
+      if (teamsPrice > 0 || b1b2Price > 0) infoHtml.push(`TEAMS或複習課程加購: $${(teamsPrice + b1b2Price).toLocaleString()}`);
       
       if (addOnDisplay.length > 0) {
-          infoHtml.push(`<br><span style="color:#cbd5e1; font-size: 0.95rem;">📝加購清單：<br>${addOnDisplay.join('、')}</span>`);
+          infoHtml.push(`
+          <div style="margin-top: 12px; color:#cbd5e1; font-size: 0.95rem;">
+            📝 加購清單：${addOnDisplay.join('、')}
+          </div>`);
       }
 
       if (totalSavedAmount > 0) {
           let discountDetails = [];
           if (earlyDiscount > 0) discountDetails.push(`早鳥折扣$${earlyDiscount.toLocaleString()}`);
           if (waivedMaterialSum > 0) discountDetails.push(`減免教材$${waivedMaterialSum.toLocaleString()}`);
-          if (addonSavedSum > 0) discountDetails.push(`贈送加購Teams或暑假複習課程價值$${addonSavedSum.toLocaleString()}`);
+          if (addonSavedSum > 0) discountDetails.push(`TEAMS或複習課程價值$${addonSavedSum.toLocaleString()}`);
 
           infoHtml.push(`<div style="margin-top: 12px; background: rgba(74, 222, 128, 0.1); padding: 8px 12px; border-radius: 6px; border: 1px solid rgba(74, 222, 128, 0.3); display: inline-block;">
             <span style="color: #4ade80; font-weight:bold; font-size:1.1rem;">
                 <i style="font-style: normal;">✨</i> 系統為您省下總金額：NT$ ${totalSavedAmount.toLocaleString()}
-            </span><br>
+            </span>
             <span style="color: #a7f3d0; font-size: 0.9rem; margin-left: 6px;">(含 ${discountDetails.join('、')})</span>
           </div>`);
       }
       
-      document.getElementById('discount-info-summary').innerHTML = infoHtml.join('<span style="color:#64748b; margin: 0 4px;">|</span>');
+      document.getElementById('discount-info-summary').innerHTML = infoHtml.join('<span style="color:#64748b; margin: 0 4px;" class="divider-pipe">|</span>');
+      
+      // 避免手機版折行時出現奇怪的 |，把最後一個 div 前面的 | 藏起來
+      let style = document.createElement('style');
+      style.innerHTML = `
+        #discount-info-summary > div { display: block; margin-top: 8px; }
+        #discount-info-summary .divider-pipe { display: none; }
+      `;
+      document.head.appendChild(style);
+
       document.getElementById('total-price-summary').textContent = `NT$ ${finalPrice.toLocaleString()}`;
     }
 
