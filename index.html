@@ -342,56 +342,91 @@
    </div>
 
    <!-- 課表區域 (緊貼試算區上方) -->
-   <div class="tech-card">
+   <style>
+  /* 新增：外層響應式滾動容器 */
+  .table-responsive-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* 讓 iOS 手機滑動更順暢 */
+    margin-bottom: 1rem;
+    padding-bottom: 8px; /* 避免捲軸擋住內容 */
+  }
+  
+  /* 新增：美化捲軸的外觀 (可選，讓整體更有質感) */
+  .table-responsive-wrapper::-webkit-scrollbar {
+    height: 8px;
+  }
+  .table-responsive-wrapper::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+  }
+  .table-responsive-wrapper::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+  }
+
+  /* 關鍵：強制鎖定表格最小寬度，防止文字被不規則擠壓 */
+  .timetable {
+    width: 100%;
+    min-width: 750px; 
+    border-collapse: collapse;
+  }
+</style>
+
+<div class="tech-card">
     <h2 class="tech-heading">🏫 國三總複習班 上課時間表</h2>
     
     <h3 style="color: #fbbf24; font-size: 1.2rem; margin-top: 10px;">☀️ 115 國三【暑假】模考特訓班 及 數學、生物 複習課程 (A階段)</h3>
-    <table class="timetable">
-      <thead>
-        <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">14:00<br>|<br>17:00</td>
-          <td id="cell-chinese-A" class="schedule-cell">自習<br>/<br>國文模考</td>
-          <td id="cell-society-A" class="schedule-cell">自習<br>/<br>社會模考</td>
-          <td id="cell-science-A" class="schedule-cell" style="color:#a7f3d0;">高鋒自然<br>生物總複習<br>(7次)</td>
-          <td id="cell-english-A" class="schedule-cell">自習<br>/<br>英文模考</td>
-          <td id="cell-math-A" class="schedule-cell" style="color:#bae6fd;">馮甯數學<br>B1-B2總複習<br>(7次)</td>
-          <td></td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="table-responsive-wrapper">
+        <table class="timetable">
+            <thead>
+                <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold; color:#e2e8f0;">14:00<br>|<br>17:00</td>
+                    <td id="cell-chinese-A" class="schedule-cell">自習<br>/<br>國文模考</td>
+                    <td id="cell-society-A" class="schedule-cell">自習<br>/<br>社會模考</td>
+                    <td id="cell-science-A" class="schedule-cell" style="color:#a7f3d0;">高鋒自然<br>生物總複習<br>(7次)</td>
+                    <td id="cell-english-A" class="schedule-cell">自習<br>/<br>英文模考</td>
+                    <td id="cell-math-A" class="schedule-cell" style="color:#bae6fd;">馮甯數學<br>B1-B2總複習<br>(7次)</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
     <h3 style="color: #38bdf8; font-size: 1.2rem; margin-top: 24px;">🌙 115 國三課程表 (A+B階段 28週)</h3>
-    <table class="timetable">
-      <thead>
-        <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">17:30<br>|<br>18:00</td>
-          <td class="schedule-cell cell-science-B">解惑</td>
-          <td class="schedule-cell cell-math-public-B">解惑</td>
-          <td class="schedule-cell cell-science-B">解惑</td>
-          <td class="schedule-cell cell-society-B">解惑</td>
-          <td class="schedule-cell cell-chinese-B">解惑</td>
-          <td class="schedule-cell cell-math-private-B">解惑</td>
-          <td rowspan="2" class="schedule-cell cell-english-B" style="color:#ddd6fe;">09:00~12:00<br><br>乙晴英文<br>總複習</td>
-        </tr>
-        <tr>
-          <td style="font-weight:bold; color:#e2e8f0;">18:00<br>|<br>21:00</td>
-          <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">自然週考<br>(18:00~19:30)</td>
-          <td class="schedule-cell cell-math-public-B" style="color:#bae6fd;">陳十數學<br>總複習<br>(公立)</td>
-          <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">高鋒自然<br>總複習</td>
-          <td class="schedule-cell cell-society-B" style="color:#fcd34d;">陳翊社會<br>總複習</td>
-          <td class="schedule-cell cell-chinese-B" style="color:#fbcfe8;">楊林國文<br>總複習</td>
-          <td class="schedule-cell cell-math-private-B" style="color:#bae6fd;">馮甯私校<br>數學進度</td>
-        </tr>
-      </tbody>
-    </table>
-   </div>
+    <div class="table-responsive-wrapper">
+        <table class="timetable">
+            <thead>
+                <tr><th>時間</th><th>一</th><th>二</th><th>三</th><th>四</th><th>五</th><th>六</th><th>日</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="font-weight:bold; color:#e2e8f0;">17:30<br>|<br>18:00</td>
+                    <td class="schedule-cell cell-science-B">解惑</td>
+                    <td class="schedule-cell cell-math-public-B">解惑</td>
+                    <td class="schedule-cell cell-science-B">解惑</td>
+                    <td class="schedule-cell cell-society-B">解惑</td>
+                    <td class="schedule-cell cell-chinese-B">解惑</td>
+                    <td class="schedule-cell cell-math-private-B">解惑</td>
+                    <td rowspan="2" class="schedule-cell cell-english-B" style="color:#ddd6fe; vertical-align: middle;">09:00~12:00<br><br>乙晴英文<br>總複習</td>
+                </tr>
+                <tr>
+                    <td style="font-weight:bold; color:#e2e8f0;">18:00<br>|<br>21:00</td>
+                    <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">自然週考<br>(18:00~19:30)</td>
+                    <td class="schedule-cell cell-math-public-B" style="color:#bae6fd;">陳十數學<br>總複習<br>(公立)</td>
+                    <td class="schedule-cell cell-science-B" style="color:#a7f3d0;">高鋒自然<br>總複習</td>
+                    <td class="schedule-cell cell-society-B" style="color:#fcd34d;">陳翊社會<br>總複習</td>
+                    <td class="schedule-cell cell-chinese-B" style="color:#fbcfe8;">楊林國文<br>總複習</td>
+                    <td class="schedule-cell cell-math-private-B" style="color:#bae6fd;">馮甯私校<br>數學進度</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
    
    <!-- 科目選擇器 & 智慧試算 -->
    <div id="subject-selection-section" class="tech-card">
