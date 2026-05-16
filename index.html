@@ -632,60 +632,74 @@
 
    <!-- Payment Info 報名方式與繳費資訊 -->
    <div class="tech-card">
-    <h2 class="tech-heading">💳 報名方式與繳費資訊</h2>
+    <h2 class="tech-heading text-xl font-bold text-white mb-4">💳 報名方式與繳費資訊</h2>
     
-    <div style="background: rgba(251, 191, 36, 0.1); padding: 18px; border-radius: 8px; margin-bottom: 24px; border-left: 4px solid #f59e0b;">
-     <div style="font-size: 1.2rem; font-weight: 700; color: #fbbf24; margin-bottom: 12px;">💳 繳費方式</div>
-     <div style="display: grid; gap: 8px;">
-      <div style="color: #e2e8f0;">方式一：現場繳費（親至顧群文教繳費）</div>
-      <div style="color: #e2e8f0;">方式二：轉帳繳費（轉帳後請依下列通知方式完成通知）</div>
-     </div>
-    </div>
-
-    <div class="payment-methods-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 18px;">
-     <!-- 方式一：現場繳費 -->
-     <div style="background: rgba(251, 191, 36, 0.05); padding: 24px; border-radius: 8px; border: 1px solid rgba(251, 191, 36, 0.3);">
-      <div style="font-size: 1.2rem; font-weight: 700; color: #fbbf24; margin-bottom: 18px; border-bottom: 1px solid rgba(251, 191, 36, 0.2); padding-bottom: 10px;">💳 方式一：現場繳費</div>
-      <div style="display: grid; gap: 14px;">
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #fbbf24; margin-bottom: 8px; font-size: 1.05rem;">📍 繳費地點</div>
-        <div style="color: #e2e8f0; font-weight: 600; font-size: 1.05rem;">顧群文教</div>
-        <div style="color: #94a3b8; font-size: 1rem; margin-top: 6px;">桃園市楊梅區文化街196號</div>
-       </div>
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #fbbf24; margin-bottom: 8px; font-size: 1.05rem;">📞 聯絡電話</div>
-        <div style="font-size: 1.3rem; font-weight: 600; color: #30e3bf;">03-4311558</div>
-       </div>
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #fbbf24; margin-bottom: 8px; font-size: 1.05rem;">📝 繳費方式</div>
-        <div style="color: #e2e8f0; font-size: 1.05rem;">親至顧群文教繳費</div>
-       </div>
-      </div>
-     </div>
-
-     <!-- 方式二：轉帳繳費 -->
-     <div style="background: rgba(56, 189, 248, 0.05); padding: 24px; border-radius: 8px; border: 1px solid rgba(56, 189, 248, 0.3);">
-      <div style="font-size: 1.2rem; font-weight: 700; color: #38bdf8; margin-bottom: 18px; border-bottom: 1px solid rgba(56, 189, 248, 0.2); padding-bottom: 10px;">🏦 方式二：轉帳繳費</div>
-      <div style="display: grid; gap: 14px;">
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px; font-size: 1.05rem;">🏦 轉帳銀行與帳號</div>
-        <div style="font-size: 1.1rem; color: #e2e8f0;">彰化銀行 (009)<br><span style="font-family: monospace; font-weight: 600; color: #d4b51c;font-size:1.5rem;">9318-01-001985-00</span></div>
-       </div>
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #38bdf8; margin-bottom: 10px; font-size: 1.05rem;">📞 轉帳後通知方式</div>
-        <div style="display: grid; gap: 8px;">
-         <div style="padding: 8px; background: rgba(56, 189, 248, 0.1); border-radius: 4px; border-left: 3px solid #38bdf8;"><span style="font-weight: 700; color: #38bdf8; font-size: 1rem;">通知方式(1)：</span> <span style="color: #cbd5e1; font-size: 1rem;">轉帳後請來電告知後五碼，便開立收據</span></div>
-         <div style="padding: 8px; background: rgba(56, 189, 248, 0.1); border-radius: 4px; border-left: 3px solid #38bdf8;"><span style="font-weight: 700; color: #38bdf8; font-size: 1rem;">通知方式(2)：</span> <span style="color: #cbd5e1; font-size: 1rem;">傳Line訊息給導師，提供轉帳後五碼與存檔圖片</span></div>
+    <div class="bg-yellow-400/10 p-4 md:p-5 rounded-lg mb-6 border-l-4 border-yellow-500">
+        <div class="text-lg font-bold text-yellow-400 mb-3">💳 繳費方式</div>
+        <div class="flex flex-col gap-2 text-slate-200 text-sm md:text-base">
+            <div>方式一：現場繳費（親至顧群文教繳費）</div>
+            <div>方式二：轉帳繳費（轉帳後請依下列通知方式完成通知）</div>
         </div>
-       </div>
-       <div style="background: rgba(15, 23, 42, 0.6); padding: 14px; border-radius: 6px;">
-        <div style="font-weight: 700; color: #38bdf8; margin-bottom: 8px; font-size: 1.05rem;">📞 聯絡電話</div>
-        <div style="font-size: 1.3rem; font-weight: 600; color: #30e3bf;">03-4311558</div>
-       </div>
-      </div>
-     </div>
     </div>
-   </div>
+
+    <div class="payment-methods-grid grid grid-cols-1 md:grid-cols-2 gap-5">
+        
+        <div class="bg-yellow-400/5 p-5 md:p-6 rounded-xl border border-yellow-400/30 flex flex-col h-full">
+            <div class="text-lg font-bold text-yellow-400 mb-4 border-b border-yellow-400/20 pb-3">
+                💳 方式一：現場繳費
+            </div>
+            
+            <div class="flex flex-col gap-3.5 flex-1">
+                <div class="bg-[#0f172a]/60 p-4 rounded-lg">
+                    <div class="font-bold text-yellow-400 mb-2 text-sm md:text-base">📍 繳費地點</div>
+                    <div class="text-slate-200 font-semibold text-base md:text-lg">顧群文教</div>
+                    <div class="text-slate-400 text-sm mt-1">桃園市楊梅區文化街196號</div>
+                </div>
+                
+                <div class="bg-[#0f172a]/60 p-4 rounded-lg">
+                    <div class="font-bold text-yellow-400 mb-2 text-sm md:text-base">📞 聯絡電話</div>
+                    <div class="text-[#30e3bf] font-bold text-xl md:text-2xl tracking-wider">03-4311558</div>
+                </div>
+                
+                <div class="bg-[#0f172a]/60 p-4 rounded-lg flex-1">
+                    <div class="font-bold text-yellow-400 mb-2 text-sm md:text-base">📝 繳費方式</div>
+                    <div class="text-slate-200 text-sm md:text-base">親至顧群文教繳費</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-sky-400/5 p-5 md:p-6 rounded-xl border border-sky-400/30 flex flex-col h-full">
+            <div class="text-lg font-bold text-sky-400 mb-4 border-b border-sky-400/20 pb-3">
+                🏦 方式二：轉帳繳費
+            </div>
+            
+            <div class="flex flex-col gap-3.5 flex-1">
+                <div class="bg-[#0f172a]/60 p-4 rounded-lg">
+                    <div class="font-bold text-sky-400 mb-2 text-sm md:text-base">🏦 轉帳銀行與帳號</div>
+                    <div class="text-slate-200 text-sm md:text-base mb-1">彰化銀行 (009)</div>
+                    <div class="font-mono font-bold text-yellow-500 text-lg md:text-xl tracking-widest break-all">
+                        9318-01-001985-00
+                    </div>
+                </div>
+                
+                <div class="bg-[#0f172a]/60 p-4 rounded-lg flex-1">
+                    <div class="font-bold text-sky-400 mb-3 text-sm md:text-base">📞 轉帳後通知方式</div>
+                    <div class="flex flex-col gap-3">
+                        <div class="p-3 bg-sky-400/10 rounded border-l-4 border-sky-400 text-sm leading-relaxed">
+                            <span class="font-bold text-sky-400 block mb-1">通知方式(1)：</span>
+                            <span class="text-slate-300">轉帳後請來電告知後五碼，便開立收據</span>
+                        </div>
+                        <div class="p-3 bg-sky-400/10 rounded border-l-4 border-sky-400 text-sm leading-relaxed">
+                            <span class="font-bold text-sky-400 block mb-1">通知方式(2)：</span>
+                            <span class="text-slate-300">傳Line訊息給導師，提供轉帳後五碼與存檔圖片</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
 
    <!-- 📢 最新活動文宣 (3張圖區塊) -->
    <div style="background: rgba(30, 41, 59, 0.6); border-radius: 16px; padding: 36px; margin-bottom: 28px; box-shadow: 0 4px 12px rgba(0,0,0,0.3); border: 1px solid rgba(56, 189, 248, 0.2); text-align: center;">
